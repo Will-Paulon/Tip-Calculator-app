@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap');
+
+/* font-family: 'Space Mono', monospace;
+ */
+
+:root{
+--VeryDarkCyan: hsl(183, 100%, 15%);
+--DarkGrayishcyan: hsl(186, 39%, 59%);
+--Grayishcyan: hsl(184, 14%, 56%);
+--Lightgrayishcyan: hsl(185, 41%, 84%);
+--Verylightgrayishcyan: hsl(189, 41%, 97%);
+--White: hsl(0, 0%, 100%);
+--Strongcyan: hsl(172, 67%, 45%);
+
+}    
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+    box-sizing: border-box ;
+    
+}
+
+body{
+
+    min-height: 140vh;
+    min-width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color:hsl(186, 39%, 59%);
+    
+
+
+}
+
+
+p{
+
+    padding: 2.5%;
+
+}
+
+label{
+    padding: 2.5%;
+}
+
+.grid{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+
+}
+
+.conteudo{
+
+    background-color: hsl(0, 0%, 100%);
+    border:none;
+    padding: 7% 3%;
+    border-radius: 6%;
+    
+    
+
+}
+
+.card1{
+    color: hsl(184, 14%, 56%);
+    
+    
+    
+
+}
+
+.card2{
+    padding: 5% 5%;
+    display: inline-block;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 10px;
+    color: hsl(189, 41%, 97%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    
+}
+
+.agrupamento__bnt{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+
+.bnt1{
+    
+    background-color: hsl(183, 100%, 15%);
+    border: none;
+    color: white;
+    margin: 2%   ;
+    padding: 3.5%;
+    width: 29%;
+    border-radius: 9%;
+    
+    
+}
+
+
+input{
+    width: 90%;
+    padding: 2.5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    
+}
+
+#img1{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: hsl(185, 27%, 90%);
+    border: none;
+    border-radius: %;
+    
+}
+
+#img2{
+
+    background-color: hsl(185, 27%, 90%);
+    border: none;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
