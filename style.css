@@ -104,7 +104,9 @@ label{
     margin: 2%   ;
     padding: 3.5%;
     width: 29%;
+    height: 50px;
     border-radius: 9%;
+    font-size: 25px;
     
     
 }
