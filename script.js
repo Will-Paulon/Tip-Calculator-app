@@ -1,80 +1,21 @@
-const img1 = document.querySelector(".img1");   ok
-const peopleInput = document.querySelector(".people-input"); ok
-const bnt1 = document.querySelectorAll(".bnt1"); ok
-const tipPerPerson = document.getElementById("tip-amount");
-const totalPerPerson = document.getElementById("total-amount");
-const resetBtn = document.querySelector(".reset");
-const tipCustom = document.querySelector(".tip-custom");
-const error = document.querySelector(".error");
+const conta = document.getElementById ("bill");
+const pessoas = document.getElementById ("people");
+const CustoPessoaPorcentagem = document.getElementById ("custom");
+const tipAmount = document.getElementById ("titulo__pt1");
+const tipPerson = document.getElementById ("titulo__pt2");
+const resetButton = document.getElementById ("resetBnt");
+const billAmount = document.querySelectorAll ("agrupamento__bnt button");
 
-img1.addEventListener("input", img1InputFun);
-peopleInput.addEventListener("input", peopleInputFun);
-bnt1.forEach(function (val) {
-  val.addEventListener("click", handleClick);
-});
-resetBtn.addEventListener("click", reset);
-tipCustom.addEventListener("input", tipInputFun);
 
-img1.value = "0.0";
-peopleInput.value = "1";
-tipPerPerson.innerHTML = "$" + (0.0).toFixed(2);
-totalPerPerson.innerHTML = "$" + (0.0).toFixed(2);
-
-let billValue = 0.0;
-let peopleValue = 1;
-let tipValue = 0.15;
-
-function billInputFun() {
-  billValue = parseFloat(img1.value);
-  calculateTip();
-}
-
-function tipInputFun() {
-  tipValue = parseFloat(tipCustom.value / 100);
-
-  bnt1.forEach(function (val) {
-    val.classList.remove("active-tip");
-  });
-  calculateTip();
-}
-
-function peopleInputFun() {
-  peopleValue = parseFloat(peopleInput.value);
-
-  if (peopleValue < 1) {
-    error.style.display = "flex";
-    peopleInput.style.border = "thick solid red";
-  } else {
-    error.style.display = "none";
-    peopleInput.style.border = "none";
-    calculateTip();
+//Calculate Tip
+function calculateTip(conta, tipPercentage, pessoas) {
+    let tipAmount = (conta * (tipPercentage / 100)) / pessoas;
+    let tip = Math.floor(titulo__pt1 * 100) / 100;
+    tip = tip.toFixed(2);
+  
+    let totalAmount = (titulo__pt1 * pessoas + conta) / pessoas;
+    totalAmount = totalAmount.toFixed(2);
+  
+    titulo__pt1.innerHTML = `$${tip}`;
+    tipPerson.innerHTML = `$${totalAmount}`;
   }
-}
-
-function handleClick(event) {
-    bnt1.forEach(function (val) {
-    val.classList.remove("active-tip");
-    if (event.target.innerHTML == val.innerHTML) {
-      val.classList.add("active-tip");
-      tipValue = parseFloat(val.innerHTML) / 100;
-    }
-  });
-  calculateTip();
-}
-
-function calculateTip() {
-  if (peopleValue >= 1) {
-    let tipAmount = (billValue * tipValue) / peopleValue;
-    let total = (billValue + tipAmount) / peopleValue;
-    tipPerPerson.innerHTML = "$" + tipAmount.toFixed(2);
-    totalPerPerson.innerHTML = "$" + total.toFixed(2);
-  }
-}
-
-function reset() {
-    img1.value = "0.0";
-  billInputFun();
-  peopleInput.value = "1";
-  peopleInputFun();
-  tipCustom.value = "";
-}
